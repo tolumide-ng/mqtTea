@@ -21,7 +21,19 @@ OR
 ```
     - you would find the `assembly output`inside `mqttea/target/debug/deps/mqttea_core.s` (if you ran the command above in debug mode, else it would be in the release folder(insteads of deps) if ran with release)
 
-### Plans
+
+## Future Goals
+- [ ] Security First Architecture
+    - [ ] Identity & Transport
+        - [ ] Mandatory TLS 1.3
+        - [ ] Mutual TLS (mTLS) with automatic certificate rotation
+        - [ ] Client identity attestation
+            - [ ] Cryptographically bound identities
+            - [ ] Hardware-backed identity hooks (TPM / HSM ready)
+            - Pluggable identity providers (PKI, SPIFEE, OIDC)
+
+
+### Current Plans
 - [ ] Protocol Support
     - [ ] MQTT 3.1.1
     - [ ] MQTT 5.0 (In Progress)

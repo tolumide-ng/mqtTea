@@ -3,6 +3,7 @@ name = "mqttea_core"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license = "MIT OR Apache-2.0"
 
 categories = ["network-programming"]
 keywords = ["mqtt", "iot", "mqttv5", "client"]

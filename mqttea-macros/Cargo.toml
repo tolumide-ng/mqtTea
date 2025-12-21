@@ -3,6 +3,7 @@ name = "mqttea-macros"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license = "MIT OR Apache-2.0"
 
 [lib]
 proc-macro = true

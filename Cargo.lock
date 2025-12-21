@@ -587,6 +587,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "mqttea"
+version = "0.0.1"
+
+[[package]]
 name = "mqttea-macros"
 version = "0.1.0"
 dependencies = [

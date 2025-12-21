@@ -3,13 +3,14 @@ resolver = "2"
 members = [
     "mqttea-core",
     "mqttea-macros",
+    "tea",
     "examples/asyncx"
-]
+, "tea"]
 
 
 [workspace.package]
 edition = "2021"
-keywords = ["mqtt", "network", "mqttea"]
+keywords = ["mqtt", "network", "mqttea", "iot", "client", "broker"]
 categories = ["mqtt", "network"]
 version = "0.1.0"
 authors = [
