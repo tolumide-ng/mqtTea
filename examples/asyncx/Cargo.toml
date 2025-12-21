@@ -13,7 +13,7 @@ tokio = { version = "1.42.0", features = ["full"] }
 smol = { version = "2.0.2", features = [] }
 async-std = "1.10"
 tokio-util = { version = "0.7.13", features= ["compat"]}
-hivemqtt_core = { path = "../../hivemqtt-core" }
+mqttea_core = { path = "../../mqttea-core" }
 dotenvy = "0.15.7"
 
 [[example]]

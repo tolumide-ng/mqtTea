@@ -1,15 +1,15 @@
 [workspace]
 resolver = "2"
 members = [
-    "hivemqtt-core",
-    "hivemqtt-macros",
+    "mqttea-core",
+    "mqttea-macros",
     "examples/asyncx"
 ]
 
 
 [workspace.package]
 edition = "2021"
-keywords = ["mqtt", "network", "hivemq"]
+keywords = ["mqtt", "network", "mqttea"]
 categories = ["mqtt", "network"]
 version = "0.1.0"
 authors = [

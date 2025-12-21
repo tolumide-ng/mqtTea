@@ -1,5 +1,5 @@
 use dotenvy::dotenv;
-use hivemqtt_core::v5::{
+use mqttea_core::v5::{
     client::{handler::AsyncHandler, network::asyncx::Network, ConnectOptions},
     commons::packet::Packet,
 };

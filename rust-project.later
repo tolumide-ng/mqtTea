@@ -3,24 +3,24 @@
 {
     "crates": [
         {
-            "root_module": "./hivemqtt-macros/src/lib.rs",
+            "root_module": "./mqttea-macros/src/lib.rs",
             "edition": "2021",
             "deps": [],
             "package": {
-                "name": "hivemqtt_macros"
+                "name": "mqttea_macros"
             }
         },
         {
-            "root_module": "./hivemqtt-core/src/lib.rs",
+            "root_module": "./mqttea-core/src/lib.rs",
             "edition": "2021",
             "deps": [
                 {
                     "crate": 0,
-                    "name": "hivemqtt_macros"
+                    "name": "mqttea_macros"
                 }
             ],
             "package": {
-                "name": "hivemqtt_core"
+                "name": "mqttea_core"
             },
             "features": ["syncx", "asyncx"]
         }

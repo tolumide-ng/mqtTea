@@ -1,25 +1,25 @@
-### HiveMQTT
+### mqttea
 [MQTT5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
 
 ## Some Guides (Incomplete)
 1. To generate the `wasm` build:
     - Ensure you have [`wasm-pack`](https://github.com/rustwasm/wasm-pack) installed on your local machine
     NB: Because [wasm-pack does not seem to support cargo-workspace](https://github.com/rustwasm/wasm-pack/issues/642)
-        - Cd into the core directory: In this case `hivemqtt-core` first
+        - Cd into the core directory: In this case `mqttea-core` first
 ```
-> cd hivemqtt-core
+> cd mqttea-core
 > wasm-pack build --target web --out-dir ./../pkg
 ```
     - This should generate the `pkg` folder which you can use for your javascript/typescript projects at the root level of this project
 
 2. To generate `asm` output:
 ```
-> cd hivemqtt-core
+> cd mqttea-core
 > cargo rustc --lib -- --emit asm
 OR 
 > cargo rustc --lib --release -- --emit asm #for prod
 ```
-    - you would find the `assembly output`inside `hivemqtt/target/debug/deps/hivemqtt_core.s` (if you ran the command above in debug mode, else it would be in the release folder(insteads of deps) if ran with release)
+    - you would find the `assembly output`inside `mqttea/target/debug/deps/mqttea_core.s` (if you ran the command above in debug mode, else it would be in the release folder(insteads of deps) if ran with release)
 
 ### Plans
 - [ ] Protocol Support

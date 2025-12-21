@@ -1,17 +1,17 @@
 {
-  "name": "hivemqtt-core",
+  "name": "mqttea_core",
   "type": "module",
   "collaborators": [
     "Tolumide Shopein <tolumideshopein@gmail.com>"
   ],
   "version": "0.1.0",
   "files": [
-    "hivemqtt_core_bg.wasm",
-    "hivemqtt_core.js",
-    "hivemqtt_core.d.ts"
+    "mqttea_core_bg.wasm",
+    "mqttea_core.js",
+    "mqttea_core.d.ts"
   ],
-  "main": "hivemqtt_core.js",
-  "types": "hivemqtt_core.d.ts",
+  "main": "mqttea_core.js",
+  "types": "mqttea_core.d.ts",
   "sideEffects": [
     "./snippets/*"
   ],
