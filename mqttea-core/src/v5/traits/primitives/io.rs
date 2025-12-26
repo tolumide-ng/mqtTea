@@ -5,5 +5,5 @@ pub trait ByteRead {
 }
 
 pub trait ByteWrite {
-    fn write_all(&mut self, buf: [u8]) -> Result<(), MQTTError>;
+    fn write_all(&mut self, buf: &[u8]) -> Result<(), MQTTError>;
 }

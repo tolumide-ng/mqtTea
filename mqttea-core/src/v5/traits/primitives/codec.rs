@@ -66,7 +66,7 @@ impl BinaryCodec for Bytes {
         let len = u16::read_from(r)? as usize;
         let mut buf = vec![0u8; len];
         r.read_exact(&mut buf)?;
-        Ok(buf)
+        Ok(Bytes::from(buf))
     }
 
     fn write_to<W: ByteWrite>(&self, w: &mut W) -> Result<(), MQTTError> {

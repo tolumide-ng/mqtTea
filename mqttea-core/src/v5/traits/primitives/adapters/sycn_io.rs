@@ -16,7 +16,7 @@ impl ByteRead for Bytes {
 }
 
 impl ByteWrite for BytesMut {
-    fn write_all(&mut self, buf: [u8]) -> Result<(), MQTTError> {
+    fn write_all(&mut self, buf: &[u8]) -> Result<(), MQTTError> {
         self.put_slice(buf);
         Ok(())
     }
