@@ -9,6 +9,19 @@ use crate::v5::commons::error::MQTTError;
 use super::read_data::ReadData;
 
 pub(crate) trait BufferIO: Sized + ReadData {
+    fn variable_length(&self) -> usize {
+        let len = self.length();
+        if len >= 2_097_152 {
+            4
+        } else if len >= 16_384 {
+            3
+        } else if len >= 128 {
+            2
+        } else {
+            1
+        }
+    }
+
     /// Encodes a non-negative Integer into the Variable Byte Integer encoding
     fn encode(&self, buf: &mut BytesMut) -> Result<(), MQTTError> {
         let mut len = self.length();
@@ -98,18 +111,5 @@ pub(crate) trait BufferIO: Sized + ReadData {
         };
 
         Ok(Some(len))
-    }
-
-    fn variable_length(&self) -> usize {
-        let len = self.length();
-        if len >= 2_097_152 {
-            4
-        } else if len >= 16_384 {
-            3
-        } else if len >= 128 {
-            2
-        } else {
-            1
-        }
     }
 }
