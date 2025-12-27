@@ -1,4 +1,14 @@
-use crate::v5::traits::read_data::ReadData;
+use crate::v5::{
+    commons::error::MQTTError,
+    traits::{
+        primitives::{
+            codec::BinaryCodec,
+            io::{ByteRead, ByteWrite},
+            varint::VarInt,
+        },
+        read_data::ReadData,
+    },
+};
 
 use super::packet_type::PacketType;
 
@@ -28,6 +38,20 @@ impl FixedHeader {
             header_len,
             ..*self
         }
+    }
+}
+
+impl BinaryCodec for FixedHeader {
+    fn write_to<W: ByteWrite>(&self, w: &mut W) -> Result<(), MQTTError> {
+        let flags = self.flags.unwrap_or(0);
+        let first_byte = self.packet_type as u8 | (flags);
+        first_byte.write_to(w)?;
+        self.remaining_length.encode(w)?;
+        Ok(())
+    }
+
+    fn read_from<R: ByteRead>(r: &mut R) -> Result<Self, MQTTError> {
+        Ok(())
     }
 }
 

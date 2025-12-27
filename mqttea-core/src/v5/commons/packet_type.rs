@@ -26,17 +26,17 @@ pub(crate) enum PacketType {
     Auth = 0xF0,        // 0b1111_0000
 }
 
-impl PacketType {
-    fn write<B>(packet: B, buf: &mut BytesMut) -> Result<(), MQTTError>
-    where
-        B: BufferIO,
-    {
-        packet.write(buf)?;
-        Ok(())
-    }
+// impl PacketType {
+//     fn write<B>(packet: B, buf: &mut BytesMut) -> Result<(), MQTTError>
+//     where
+//         B: BufferIO,
+//     {
+//         packet.write(buf)?;
+//         Ok(())
+//     }
 
-    fn read(buf: &mut BytesMut) {}
-}
+//     fn read(buf: &mut BytesMut) {}
+// }
 
 #[cfg(test)]
 mod packet_type {

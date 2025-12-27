@@ -73,3 +73,21 @@ pub(crate) trait VarInt {
     //     Err(MQTTError::MalformedPacket)
     // }
 }
+
+impl VarInt for usize {
+    fn length(&self) -> usize {
+        *self
+    }
+}
+
+impl VarInt for u32 {
+    fn length(&self) -> usize {
+        *self as usize
+    }
+}
+
+impl VarInt for u16 {
+    fn length(&self) -> usize {
+        *self as usize
+    }
+}
